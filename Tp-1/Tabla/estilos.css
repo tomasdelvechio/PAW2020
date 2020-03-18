@@ -46,11 +46,14 @@ td{
 }
 .svg{
     background-color: rgb(153,0,0);
+    
 }
 
 .tpfinal{
     background-color: rgb(17,85,204);
     color: white;
+    font-weight: bold;
+    
 }
 .ultimo{
     background-color: rgb(172,201,254);
