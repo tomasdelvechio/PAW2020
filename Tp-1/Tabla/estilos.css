@@ -1,0 +1,57 @@
+table,th {
+    border: 2px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: Arial;
+}
+
+
+td{
+    border:2px solid rgb(204,204,204);
+    height: 20px;
+    width: 20px;
+}
+
+.subtitle{
+    color: black;
+    font-family: Arial;
+    font-size: unset;
+    text-align: center;
+    height: 90px;
+    width: 100px;
+}
+
+.par{
+    background-color: rgb(232,240,254);
+}
+
+.impar{
+    background-color: white;
+}
+
+.html5{
+    background-color: rgb(230, 145, 56);
+    
+}
+
+.php{
+    background-color: rgb(17,85,204);
+}
+
+.js{
+    background-color: yellow;
+}
+.css{
+    background-color: rgb(109,158,235);
+}
+.svg{
+    background-color: rgb(153,0,0);
+}
+
+.tpfinal{
+    background-color: rgb(17,85,204);
+    color: white;
+}
+.ultimo{
+    background-color: rgb(172,201,254);
+}
