@@ -25,56 +25,62 @@
 
 .iconoExp{
     font-size: 40px;
-    padding-left: 20%;
 }
 
-.expT{
+body{
+    display: inline-flex;
+}
+
+.letras{
     color: black;
     font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
     font-size: 18px; 
     font-weight: 400;
-    display: inline-flex;
 }
-
-.pizqu{
-    display: inline-flex;
-    width: auto;
+article{
+    width: 100%;
 }
-
 
 .p1{
-    width: 20%;
+    display: inline-block;
     text-align: center;
+    width:20%;
 }
 
  .p2{
-    width: 20%;
+    display: inline-block;
+    width:20%;
+    text-align: center;
+    width: 10%;
 }
 
 .p3{
-    width:60%
+    display: inline-block;
+    
+    width: 65%;
 }
 
+.pEd2{
+    padding-left: 10%;
+    display: inline-block;
+    width: 65%;
+}
 .foto{
     width: 100px;
     height: 100px;
     border-radius: 50px;
 }
 
-.parceo{
-    display: inline-flex;
-}
 
 .izquierda{
-    padding-left:0%;
-    max-width: 60%;
+    width: 70%;
+    border:1px solid black;
 }
 
 
 .derecha{
-    max-width: 30%;
-    padding-left: 0%;
-    padding-top: 2%;
+    width:30%;
+    border:1px solid black;
     text-align: center;
     background-color: rgb(227,215,201);
 }
