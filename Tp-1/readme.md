@@ -6,6 +6,7 @@
 <h4>Objetivo: Obtener los conocimientos básicos sobre el maquetado de una página web.</h4>
 
 <h5>Teorico</h5>
+
 1. ¿Qué es un lenguaje de marcado? ¿Cuál es su utilidad? ¿Qué es un tag? ¿Qué es un atributo?
     
     Un lenguaje de marcado es una forma de codificar un documento que incorpora etiquetas. Un lenguaje de marcado muy conocido es HTML, el cual es un lenguaje para la creación de páginas Web, es decir, es un lenguaje de marcas que se utiliza para definir la estructura de una página Web. Para definir esta estructura se utilizan etiquetas, o también llamadas tag. Estas etiquetas forman un elemento HTML, el cual está formado por un inicio de las etiquetas, un contenido y un fin de la etiqueta. Además del contenido, a estos elementos se le puede adicionar atributos, los cuales proporcionan información adicional sobre estos.
@@ -35,7 +36,7 @@ Un link puede apuntar a cualquier página, inclusive a si misma, la importancia 
 
 4. ¿Cómo funcionan los tags audio y video?
 
-HTML5 introduce soporte para el contenido multimedia, utilizando los elementos <audio> y <video>, ofreciendo la posibilidad de insertar contenido multimedia en documentos HTML. Estas etiquetas tienen atributos específicos, como por ejemplo de donde deben recuperar los archivos, el tiempo que se debe reproducir, volumen y demás características especificas de los archivos de audio o video. 
+HTML5 introduce soporte para el contenido multimedia, utilizando los elementos audio y video, ofreciendo la posibilidad de insertar contenido multimedia en documentos HTML. Estas etiquetas tienen atributos específicos, como por ejemplo de donde deben recuperar los archivos, el tiempo que se debe reproducir, volumen y demás características especificas de los archivos de audio o video. 
 
 5. ¿Qué es el Rendering Engine de un Browser? ¿Cuál es el que utiliza cada uno de los 5 browsers más conocidos (Chrome, Firefox, Safari, IE-Edge, Opera)? ¿Cuál es la importancia de conocer cada uno de ellos en la construcción de un sitio?
 
@@ -54,8 +55,10 @@ desarrollar el código HTML5 correspondiente.
     Nota: Realizar una captura en imagen del sitio a fin de poder corregir contrastando con lo que muestra el sitio ese día ya que puede variar.
 
 7. Elabore en HTML5 una página que contenga su currículum vítae, respetando la estructura que se muestra a continuación. Tenga en cuenta que los elementos subrayados son enlaces a páginas web o a direcciones de correo electrónico y que la foto debe ser un enlace a la propia imagen. Determine qué tags con qué atributos son necesarios en cada caso.
+   
     <a href="\CV\cv.html">Curriculum</a>
     
 
 8. Elabore el código necesario para representar la siguiente tabla.
+   
     <a href="\Tabla\tabla.html">Tabla</a>
