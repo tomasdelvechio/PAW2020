@@ -52,7 +52,9 @@ Opera: Presto, pero mudo a WebKit.
 
 6. Dibujar el Wireframe correspondiente a la página principal de lujan.gob.ar y en función a este
 desarrollar el código HTML5 correspondiente.
-    Nota: Realizar una captura en imagen del sitio a fin de poder corregir contrastando con lo que muestra el sitio ese día ya que puede variar.
+Nota: Realizar una captura en imagen del sitio a fin de poder corregir contrastando con lo que muestra el sitio ese día ya que puede variar.    
+Se pueden ver ambas imágenes aqui:
+        <a href="\WireFrame\WireFrame2.jpg">Wireframe Creado</a><a href=\WireFrame\screencapture-lujan-gob-ar-2020-03-19-23_26_47.png> Screen página de Luján</a>
 
 7. Elabore en HTML5 una página que contenga su currículum vítae, respetando la estructura que se muestra a continuación. Tenga en cuenta que los elementos subrayados son enlaces a páginas web o a direcciones de correo electrónico y que la foto debe ser un enlace a la propia imagen. Determine qué tags con qué atributos son necesarios en cada caso.
    
