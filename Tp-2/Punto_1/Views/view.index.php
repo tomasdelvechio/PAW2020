@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="Views\styles.css">
     <script>
         addEventListener('load',inicio,false);
         function reset()
@@ -25,7 +25,7 @@
 <body>
     <header><h1>Formulario de turnos</h1></header>
     
-    <form action="/newForm.php" class ="box" method="post">
+    <form action="Models/validaciones.php" class ="box" method="POST">
         <input type="text" name="nombrePaciente"placeholder="*Nombre del paciente" required 
         value="<?php if(isset($nombrePaciente)) echo $nombrePaciente ?>">
         <input type="email" name="email" id="email" placeholder="*E-mail" required>
@@ -48,15 +48,15 @@
             <option value="castaño">Castaño</option>
             <option value="pelirrojo">Pelirrojo</option>
         </select>
+        <label for="date">Fecha y hora de turno:</label>
         <input type="date" id="fturno" name="fturno">
         <input type="time" id="tturno" name="tturno" min="08:00:00" max="17:00:00" step="900">
+        <label for="fileImage">Diagnóstico</label><input type="file" id="fileImage" name ="filaImage" accept="image/png, .jpg">
         <p class = 'error'>*Campos requeridos</p>
         <input type="submit" value="Enviar" name="submit">
         <input type="reset" value="Limpiar" name="reset">
-        
         <?php 
-        include ("validaciones.php");
-        ?>
+        include 'Models/validaciones.php'; ?>
     </form>
 </body>
 </html>

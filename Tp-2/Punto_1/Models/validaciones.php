@@ -1,5 +1,7 @@
 <?php
-  
+
+namespace App\Models;
+
     if(isset ($_POST['submit'])){
       $nombrePaciente = $_POST['nombrePaciente'];
       $email = $_POST['email'];
@@ -10,13 +12,15 @@
       $dateNac =$_POST['Fecha_de_nacimiento'];
       $dateTurn =$_POST['fturno'];
       $tturno = $_POST['tturno'];
+      $image = $_POST['fileImage'];
 
     
         if (empty($nombrePaciente)){
             echo "<p> Agrega tu nombre </p>";
             }else{
-                if (strlen($nombrePaciente) > 30 ){
+                if (strlen($nombrePaciente) > 5 ){
                     echo "<p class='error'>*Nombre muy largo </p>";
+                    
                 }
             }
         
@@ -59,6 +63,10 @@
         
         if(empty($tturno)){
             echo "<p class='error'>*Ingresa una fecha</p>";
+        }
+
+        if(empty($image)){
+            echo "<p class = 'error'>Advertencia, no ha cargado ninguna imagen</p>";
         }
     
     }
