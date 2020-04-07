@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Views\styles.css">
+    <link rel="stylesheet" href="styles.css">
     <script>
         addEventListener('load',inicio,false);
         function reset()
@@ -20,14 +20,14 @@
           document.getElementById('alt').innerHTML=document.getElementById('altura').value;
         }
       </script>
-    <title><?= $title ?></title>
+    <title>Turnos médicos</title>
 </head>
 <body>
-    <header><h1><?=$h1?></h1></header>
+    <header><h1>Formulario de turnos</h1></header>
+      
     <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" class ="box" method="POST">
-        <label class = "separate" for="datosPacientes">DATOS PACIENTE</label>
-        <input type="text" name="nombrePaciente"placeholder="*Nombre del paciente" 
-        value="">
+        <input type="text" name="nombrePaciente"placeholder="*Nombre del paciente" required 
+        value="<?php if(isset($nombrePaciente)) echo $nombrePaciente ?>">
         <input type="email" name="email" id="email" placeholder="*E-mail" required>
         <input type="tel" name="tel" placeholder="*Teléfono" required>
         <input type="number" name="edad" id="edad" placeholder="Edad" min="1" max="130">
@@ -39,7 +39,7 @@
             <span id="alt">150</span><span>cm</span>
         </div>
        
-        
+       
         <label for="Fecha_de_nacimiento">Fecha de nacimiento</label>
         <input type="date" id="Fecha_de_nacimiento" name="Fecha_de_nacimiento" required>
         <select name="colorPelo" id="colorPelo">
@@ -48,18 +48,16 @@
             <option value="castaño">Castaño</option>
             <option value="pelirrojo">Pelirrojo</option>
         </select>
-        <label class="separate" for="turno">TURNO</label>
-        <label for="date">Fecha</label>
+        <label for="date">Fecha y hora de turno:</label>
         <input type="date" id="fturno" name="fturno">
-        <label for="tturno">Hora</label>
         <input type="time" id="tturno" name="tturno" min="08:00:00" max="17:00:00" step="900">
-        <label class="separate" for="fileImage">DIAGNÓSTICO</label><input type="file" id="fileImage" name ="filaImage" accept="image/png, .jpg">
+        <label for="fileImage">Diagnóstico</label><input type="file" id="fileImage" name ="filaImage" accept="image/png, .jpg">
         <p class = 'error'>*Campos requeridos</p>
         <input type="submit" value="Enviar" name="submit">
         <input type="reset" value="Limpiar" name="reset">
-         
-        <? include 'Models/validaciones.php'; ?> 
+        <? include 'validaciones.php'; ?>
     </form>
 </body>
 </html>
+
 

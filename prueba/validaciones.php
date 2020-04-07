@@ -1,7 +1,5 @@
 <?php
 
-namespace App\Models;
-
 
     if(isset ($_POST['submit'])){
       $nombrePaciente = $_POST['nombrePaciente'];
@@ -14,14 +12,14 @@ namespace App\Models;
       $dateTurn =$_POST['fturno'];
       $tturno = $_POST['tturno'];
       $image = $_POST['fileImage'];
-    
-           
 
+    
         if (empty($nombrePaciente)){
             echo "<p> Agrega tu nombre </p>";
             }else{
-                if (strlen($nombrePaciente) > 30 ){
+                if (strlen($nombrePaciente) > 5 ){
                     echo "<p class='error'>*Nombre muy largo </p>";
+                    
                 }
             }
         
@@ -71,4 +69,7 @@ namespace App\Models;
         }
     
     }
-    // include 'verifyTurno.php';
+
+   
+    
+?>

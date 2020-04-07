@@ -6,12 +6,14 @@ include 'core/Request.php';
 
 use App\core\Router;
 use App\core\Request;
-use App\Controller\controller;
+
+
 
 $router = new Router;
 
 $router->define_routes([
-    'GET /'=> 'controller_index',
+    'GET /'=> 'index',
+    'POST /index.php'=> 'index',
     'POST /newForm' => 'newForm',
     'GET /newForm' => 'newForm',
 ]);
