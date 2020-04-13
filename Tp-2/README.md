@@ -23,7 +23,7 @@ k. 2 botones: Enviar y Limpiar.
 
 Todos los elementos del formulario deben validarse del lado de cliente y servidor, con el formato que mejor se ajuste y permitan HTML y PHP. Además, tomar en cuenta de validar que los datos ingresados se encuentren en los rangos especificados. ¿Por qué cree usted que se requiere validar los datos en ambos extremos de la comunicación?
 
-Para poder correr la aplicación se debe levantar un servidor PHP en el directorio  <a href="/">Tp-2</a>.
+Para poder correr la aplicación se debe levantar un servidor PHP en este <a href="">directorio</a>.
 
 La validación es necesaria hacerla tanto del lado cliente como del servidor ya que, la validación del lado cliente es para mejorar la experiencia del usuario al momento de ingresar los datos. Mientras tanto que la validación en el lado del servidor, se utiliza para aquellos usuarios maliciosos que saben saltear la validación de usuario y por lo tanto, pueden ingresar datos inválidos, erróneos, o hasta código.
 
