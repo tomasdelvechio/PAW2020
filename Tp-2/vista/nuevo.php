@@ -25,6 +25,6 @@
 <body>
 <?php include 'header.php'?>
     <h2>Nuevo turno</h2>
-    <? include 'form.php'?>
+    <?php include 'form.php'?>
 </body>
 </html>

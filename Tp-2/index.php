@@ -3,15 +3,16 @@ include 'controlador/Turnera.php';
 try{
     $controlador = new Turnera;
     
+    $accion = $_GET['accion'];
     
-    switch ($_GET['accion']){
+    switch ($accion){
         //nuevo
         case 'nuevo':
             $controlador->nuevo();
         break;
         case 'viewTurn':
-            $controlador->linkturno($_GET['id']);
-            
+            $id_t=$_GET['id'];
+            $controlador->linkturno($id_t);
         break;
 
         default :

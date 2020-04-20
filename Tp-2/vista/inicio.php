@@ -27,7 +27,7 @@
                 <td><?=$turno->getData()['nombre'];?></td>
                 <td><?=$turno->getData()['email'];?></td>
                 <td><?=$turno->getData()['tel'];?></td>
-                <td><a href="/index.php?accion=viewTurn&id=<?print_r($turno->getData()['id_turno']);?>">Ver</a></td>
+                <td><a href="/index.php?accion=viewTurn&id=<?=($turno->getData()['id_turno']);?>">Ver</a></td>
             </tr>
         <? endforeach?>
         

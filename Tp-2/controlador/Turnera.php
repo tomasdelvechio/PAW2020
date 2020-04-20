@@ -22,7 +22,7 @@ class Turnera {
     public function addTurno($turno){
         $errores=$turno->validar();
         if(count($errores)<1){
-            $route_image= 'images/'.self::$id_turno.'.'.pathinfo($_FILES['diagnostico']['name'],PATHINFO_EXTENSION);
+            $route_image= 'images/'.self::$id_turno.'.'.pathinfo($_FILES['diagnostico']['name'],PATHINFO_EXTENSION);   
             move_uploaded_file($_FILES['diagnostico']['tmp_name'],$route_image);
             array_push(self::$turnos,$turno->getData()); //self:: entro a propiedades estaticas
             file_put_contents('turnos.json',(json_encode(self::$turnos)));
@@ -47,8 +47,15 @@ class Turnera {
         if($_SERVER['REQUEST_METHOD']=='POST'){
             $turno = new Turno;
             self::$id_turno++;
-            $_POST['diagnostico'] = 'images/'.self::$id_turno.'.'.pathinfo($_FILES['diagnostico']['name'],PATHINFO_EXTENSION);
-            $turno->import($_POST,self::$id_turno);
+            $new_post = $_POST;
+            //agrego var new_post y verifico si esta vacio
+                if(!empty($new_post['diagnostico'])){
+                    $new_post['diagnostico'] = 'images/'.self::$id_turno.'.'.pathinfo($_FILES['diagnostico']['name'],PATHINFO_EXTENSION);
+                }else{
+                    $new_post['diagnostico']='';
+                }
+            
+            $turno->import($new_post,self::$id_turno);
             $this->addTurno($turno);
         }
     }

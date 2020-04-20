@@ -3,9 +3,9 @@
 
 <h3>Fecha de entrega: Chivilcoy:15/04/20</h3>
 
-<h4>Objetivo: Entender cómo un formulario HTML se traduce en una petición HTTP y cómo la misma es procesada por una aplicación.</h4>
+<h4>Objetivo: Entender cómo un formulario HTML se traduce en una petición HTTP y cómo la misma es procesada por una aplicación. </h4>
 
-<h5>Teorico</h5>
+<h5>Teórico</h5>
 
 1. Elabore una aplicación que presente al usuario un formulario implementado por HTML para la carga de los datos de una persona que solicita turno médico. El formulario deberá disponer de los siguientes campos:
 
@@ -29,12 +29,15 @@ La validación es necesaria hacerla tanto del lado cliente como del servidor ya 
 
 2. Extienda el ejercicio anterior para que al enviar el formulario mediante el método POST se muestre al usuario un resumen del turno.
 
-Cuando se envían los datos al hacer clik en el botón enviar, se muestra un resumen al usuario.
+Cuando se envían los datos al hacer click en el botón enviar, se muestra un resumen al usuario.
 
 3. Realice las modificaciones necesarias para que el script del punto anterior reciba los datos mediante el método GET. ¿Qué diferencia nota? ¿Cuándo es conveniente usar cada método? Consejo: Utilice las herramientas de desarrollador de su Navegador (Pestaña Red) para observar las diferencias entre las diferentes peticiones.
 
 Al utilizar GET para enviar los formularios al servidor, los datos viajan al servidor a través de la URL en forma de querystring. Mientras que cuando se utiliza el método POST, los datos están "ocultos" al cliente, en realidad, no aparecen en la URL, pero los datos pueden verse con el inspector de elementos de cualquier navegador. 
-Es conveniente utilizar el método GET cuando se quiere obtener datos del servidor, mientras que el método POST cuando se quieren enviar datos del cliente al servidor para luego tomar una decisión en base a los valores recibidos.
+Es conveniente utilizar el método GET cuando se quiere obtener datos del servidor y en teoría no debería ser usado cuando se envían contraseñas o información sensible, mientras que el método POST cuando se quieren enviar datos del cliente al servidor para luego tomar una decisión en base a los valores recibidos.
+
+El método GET, tiene limitantes en cuanto al envío de datos y los caracteres permitidos (código ASCII). Este límite se lo da la URL, ya que tiene una longitud máxima de 2048 caracteres. Mientras que el método POST, no presenta limitantes ni en longitud ni en tipos de datos. En cuanto a la codificación el método GET utiliza una codificación de aplicación (x-www-form-urlencoded). En cambio, el método POST utiliza codificación Multipart, para datos binarios o formulario o de aplicación (x-www-form-urlencoded).
+
 
 4. Agregue al formulario un campo que permita adjuntar una imagen, y que la etiqueta del campo sea Diagnóstico. El campo debe validar que sea un tipo de imagen valido (.jpg o .png) y será optativo. La imagen debe almacenarse en un subdirectorio del proyecto y también debe mostrarse al usuario al mostrar el resumen del turno del ejercicio 2. ¿Qué sucede si 2 usuarios cargan imágenes con el mismo nombre de imagen? ¿Qué mecanismo implementar para evitar que un usuario sobrescriba una imagen con el mismo nombre?
 
@@ -43,7 +46,8 @@ Otro mecanismo que se pensó era guardar la imagen en subcarpetas nombradas con 
 
 5. Utilice las herramientas para desarrollador del navegador y observe cómo fueron codificados por el navegador los datos enviados por el navegador en los dos ejercicios anteriores. ¿Qué diferencia nota?
 
-Para poder enviar los "input=file" es necesario que en el formulario se incluya el atributo multipart/form-data, este cambia la forma en que se codifican los datos.
+Para poder enviar los "input=file" es necesario que en el formulario se incluya el atributo multipart/form-data, este cambia la forma en que se codifican los datos binarios, cuando se trata del envío de datos adjuntos, es conveniente utilizar esta codificación ya que reduce la cantidad de bytes necesarios para el envío.
+En cambio, si los datos enviados son solamente de texto, puede utilizarse la codificación inicial ya que las diferencias no son significantes.
 
 6. Agregar persistencia al sistema de turnos. Todos los datos del formulario deben almacenarse mediante algún mecanismo para poder ser recuperados posteriormente. Crear una nueva vista que le permita a un empleado administrativo visualizar todos los turnos en una tabla. La tabla debe incluir los siguientes campos: 
 a. Fecha del turno 
@@ -60,3 +64,4 @@ Para lograr la persistencia, se utilizó la serialización de datos mediante JSO
 7. Construya la vista de ficha de turno. Dicha vista debe permitir acceder al turno y mostrar todos sus datos, recuperados del mecanismo de persistencia elaborado en el punto anterior. ¿Cómo se identifica y discrimina un turno de otro? Debe funcionar el link a la ficha que se encuentra en la tabla de turnos. Recuerde agregar un enlace para volver a la tabla de turnos.
 
 Cada turno tiene asignado un ID único, el cual se genera al dar de alta un nuevo turno.
+
