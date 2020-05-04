@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block header %}
+	{{ include('partials/header.html') }}
+{% endblock %}
+
+{% block main %}
+
+    <h2>Turnos dados</h2>
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Paciente</th>
+            <th>Email</th>
+            <th>Teléfono</th>
+            <th>Ficha</th>
+        </tr>
+        {% foreach ($turnosLocal as $turno) : %} 
+                <tr>
+                    <td>{{ turno.id_turno }}</td>
+                    <td>{{ turno.fturno }}</td>
+                    <td>{{ turno.tturno }}</td>
+                    <td>{{ turno.nombre }}</td>
+                    <td>{{ turno.email }}</td>
+                    <td>{{ turno.tel }}</td>
+                    <td>
+                        <ul>
+                            <li><a href="/turnos/ver&id={{ turno.id_turno }}">Ver</a></li>
+                            <li><a href="/turnos/modificar&id={{ turno.id_turno }}">Modificar</a></li>
+                            <li><a href="/turnos/borrar&id={{ turno.id_turno }}">Borrar</a></li>
+                        </ul>
+                    </td>
+                </tr>
+        {% endforeach? %}
+
+    </table>
+
+{% endblock %}

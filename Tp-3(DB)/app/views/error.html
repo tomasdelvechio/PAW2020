@@ -1,0 +1,13 @@
+  
+{% extends "base.html" %}
+
+{% block header %}
+	{{ include('partials/header.html') }}
+{% endblock %}
+
+{% block main %}
+<blockquote>
+	<code>{{ code }}</code>
+	{{ error }}
+</blockquote>
+{% endblock %}

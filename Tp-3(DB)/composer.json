@@ -1,0 +1,15 @@
+{
+    "autoload": {
+        "psr-4": {
+            "App\\": ["./app", "./core"]
+        },
+        "classmap": [
+            "./"
+        ],
+        "files": ["core/helpers.php"]
+    },
+    "require": {
+        "monolog/monolog": "^2.0",
+        "twig/twig": "^2.0"
+    }
+}

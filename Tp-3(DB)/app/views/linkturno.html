@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block header %}
+	{{ include('partials/header.html') }}
+{% endblock %}
+
+{% block main %}
+<h2>Datos del turno #{{ id }}</h2>
+     
+     <ul class = "resumen">
+        <li>Paciente: {{ nombre }}</li>
+        <li>Correo electrónico: {{ email }} </li>
+        <li>Teléfono: {{ tel }}</li>
+        <li>Edad: {{ edad }}</li>
+        <li>Talla de calzado: {{ talla }}</li>
+        <li>Altura: {{ altura }} </li>
+        <li>Fecha de nacimiento: {{ nacimiento }}</li>
+        <li>Color de pelo: {{ pelo }} </li>
+        <li>Fecha de turno: {{ fturno }}</li>
+        <li>Hora de turno: {{ tturno }}</li>
+        <li>Diagnóstico adjuntado:</li>
+        <li><img src="{{ diagnostico }}" alt="Imagen diagnostico"></li>  
+     </ul>
+{% endblock %}
