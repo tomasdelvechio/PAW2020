@@ -18,7 +18,7 @@ class TurnoController extends Controller
   }
 
     public function nuevo(){
-        $cabezera = "Nuevo turno";
+        $cabecera = "Nuevo turno";
         return view('form');
     }
    
