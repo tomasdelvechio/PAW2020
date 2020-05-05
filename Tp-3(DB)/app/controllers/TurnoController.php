@@ -2,27 +2,24 @@
 
 namespace App\Controllers;
 
-use App\Core\App;
 use App\Core\Controller;
 use App\Models\Turno;
 
-class TurnosController extends Controller 
+class TurnoController extends Controller
 {
-
     public function __construct()
     {
         $this->model = new Turno();
     }
 
-    public function index()
-    {
+    public function inicio(){
         $data = $this->model->getAllData();
-        return view('index',$data);
-    }
-
+       return view('index',$data);
+  }
 
     public function nuevo(){
-        return view('nuevo');
+        $cabezera = "Nuevo turno";
+        return view('form');
     }
    
     public function ver(){
@@ -40,8 +37,10 @@ class TurnosController extends Controller
     }
 
     public function guardar(){
-
+        $errores=$turno->validar();
         
     }
+
+ 
 
 }

@@ -9,7 +9,7 @@ class ProjectController
      */
     public function notFound()
     {
-        return view('not-found');
+        return view('error');
     }
 
     /**
@@ -17,6 +17,6 @@ class ProjectController
      */
     public function internalError()
     {
-        return view('internal-error');
+        return view('error');
     }
 }

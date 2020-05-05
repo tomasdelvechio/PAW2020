@@ -1,31 +1,15 @@
 <!DOCTYPE html>
 <html>
-<head>
-    {% block head %}
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="vista/styles.css">
-        <title>{% block title %}{% endblock %}</title>
-        <script>
-            addEventListener('load',inicio,false);
-            function reset()
-            {
-              document.getElementById('alt').innetHTML='150';
-            }
-            function inicio()
-            {
-              document.getElementById('altura').addEventListener('change',cambioAltura,false);
-            }
-          
-            function cambioAltura()
-            {    
-              document.getElementById('alt').innerHTML=document.getElementById('altura').value;
-            }
-          </script>
-    {% endblock %}
-</head>
-<body>
+  <head>
+        {% block head %}
+          <meta charset="utf-8">
+          <link rel="stylesheet" href="/public/css/styles.css">
+          <title>{% block title %}{% endblock %}</title>
+        {% endblock %}
+  </head>
+  <body>
     <header>{% block header %}{% endblock %}</header>
     <main>{% block main %}{% endblock %}</main>
     <footer>{% block footer %}{% endblock %}</footer>
-</body>
+  </body>
 </html>
