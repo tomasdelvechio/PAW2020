@@ -11,28 +11,28 @@ class Turno extends Model{
     private $id_turno="";
     private $nombre="";
     private $email="";
-    private $tel="";
+    private $telefono="";
     private $edad="";
     private $talla="";
     private $altura="";
-    private $nacimiento="";
-    private $pelo="";
-    private $fturno="";
-    private $tturno="";
+    private $fecha_nacimiento="";
+    private $color_pelo="";
+    private $fecha_turno="";
+    private $hora_turno="";
     private $diagnostico="";
 
     public function import($source,$id_turn){
         $this->id_turno=$id_turn;
         $this->nombre = $source["nombre"];
         $this->email= $source["email"];
-        $this->tel= $source["tel"];
+        $this->telefono= $source["telefono"];
         $this->edad= $source["edad"];
         $this->talla= $source["talla"];
         $this->altura =$source["altura"];
-        $this->nacimiento = $source["nacimiento"];
-        $this->pelo = $source["pelo"];
-        $this->fturno = $source["fturno"];
-        $this->tturno = $source["tturno"];
+        $this->fecha_nacimiento = $source["fecha_nacimiento"];
+        $this->color_pelo = $source["color_pelo"];
+        $this->fecha_turno = $source["fecha_turno"];
+        $this->hora_turno = $source["hora_turno"];
         $this->diagnostico = $source["diagnostico"];
     }
 
@@ -50,7 +50,7 @@ class Turno extends Model{
             array_push($errores, "*Ingrese un email correcto");
         }
 
-        if(empty($this->tel)){
+        if(empty($this->telefono)){
             array_push($errores,"*Ingrese un teléfono");
         }else if(preg_match("/\d{4}[ \- ]\d{2}[ ]\d{4}/i", $this->_tel)){
             array_push($errores, "*Ingrese un teléfono válido");
@@ -65,17 +65,17 @@ class Turno extends Model{
         }
 
         $fecha_actual=date("Y-m-d");
-        if(empty($this->nacimiento)){
+        if(empty($this->fecha_nacimiento)){
             array_push($errores, "*Ingresa una fecha de nacimiento");
          }
 
-        if(empty($this->fturno)){
+        if(empty($this->fecha_turno)){
             array_push($errores,"*Ingrese una fecha de turno");}
         // }else if($this->fturno<$fecha_actual){
         //     array_push($errores,"*La fecha del turno no puede ser anterior a la actual");
         // }
 
-        if(empty($this->tturno)){
+        if(empty($this->hora_turno)){
             array_push($errores, "*Ingrese horario");
         }else if(!preg_match("/^(?:2[0-3]|[01][0-9]):[0-5][0-9]$/", $this->tturno)){
             array_push($errores, "*Ingrese un horario válido");
@@ -93,14 +93,14 @@ class Turno extends Model{
             'id_turno' => $this->id_turno,
             'nombre' => $this->nombre,
             'email' => $this->email,
-            'tel' => $this->tel,
+            'telefono' => $this->telefono,
             'edad' =>$this->edad,
             'talla' => $this->talla,
             'altura' => $this->altura,
-            'nacimiento' => $this->nacimiento,
-            'pelo' => $this->pelo,
-            'fturno' => $this->fturno,
-            'tturno' => $this->tturno,
+            'fecha_nacimiento' => $this->fecha_nacimiento,
+            'color_pelo' => $this->color_pelo,
+            'fecha_turno' => $this->fecha_turno,
+            'hora_turno' => $this->hora_turno,
             'diagnostico' => $this->diagnostico,
         );
         return $data;
@@ -108,10 +108,10 @@ class Turno extends Model{
     
     public function getTurno($id){
         $data = $this->db->get(self::$table,$id);
-            if(!empty($data)){
-                $this->import($data);
+        if(!empty($data)){
+                $this->import($data,$id);
             }
-            return $this->getData();
+        return $this->getData();
     }
 
     public function guardar(){

@@ -5,19 +5,19 @@
 {% endblock %}
 
 {% block main %}
-<h2>Datos del turno #{{ id }}</h2>
+<h2>Datos del turno #{{ turno.id_turno }}</h2>
      
      <ul class = "resumen">
-        <li>Paciente: {{ nombre }}</li>
-        <li>Correo electrónico: {{ email }} </li>
-        <li>Teléfono: {{ tel }}</li>
-        <li>Edad: {{ edad }}</li>
-        <li>Talla de calzado: {{ talla }}</li>
-        <li>Altura: {{ altura }} </li>
-        <li>Fecha de nacimiento: {{ nacimiento }}</li>
-        <li>Color de pelo: {{ pelo }} </li>
-        <li>Fecha de turno: {{ fturno }}</li>
-        <li>Hora de turno: {{ tturno }}</li>
+        <li>Paciente: {{ turno.nombre }}</li>
+        <li>Correo electrónico: {{ turno.email }} </li>
+        <li>Teléfono: {{ turno.telefono }}</li>
+        <li>Edad: {{ turno.edad }}</li>
+        <li>Talla de calzado: {{ turno.talla }}</li>
+        <li>Altura: {{ turno.altura }} </li>
+        <li>Fecha de nacimiento: {{ turno.fecha_nacimiento }}</li>
+        <li>Color de pelo: {{ turno.color_pelo }} </li>
+        <li>Fecha de turno: {{ turno.fecha_turno }}</li>
+        <li>Hora de turno: {{ turno.hora_turno }}</li>
         <li>Diagnóstico adjuntado:</li>
         <li><img src="{{ diagnostico }}" alt="Imagen diagnostico"></li>  
      </ul>

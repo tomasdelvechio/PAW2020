@@ -38,6 +38,14 @@ class QueryBuilder
     }
 
     /**
+     * Select a record from a database table
+     */
+    public function get($table, $id){
+        $statement = $this->pdo->prepare("select * from {$table} where id_turno = '{$id}'");
+        $statement->execute();
+        return $statement->fetch(PDO::FETCH_ASSOC);
+    }
+    /**
      * Insert a record into a table.
      *
      * @param  string $table

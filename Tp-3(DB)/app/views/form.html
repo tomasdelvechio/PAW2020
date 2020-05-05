@@ -17,14 +17,14 @@
 
     <label class="separate"> Datos personales</label>
     
-    <input type="text" name="nombre"placeholder="*Nombre del paciente" required value="{{ nombre }}">
+    <input type="text" name="nombre"placeholder="*Nombre del paciente" required value="{{ turno.nombre }}">
     <label for="nombre" class = "error"></label>
     
-    <input type="email" name="email" id="email" placeholder="*E-mail" required value="{{ email }}">
+    <input type="email" name="email" id="email" placeholder="*E-mail" required value="{{ turno.email }}">
     <label for="email" class = "error"></label>
 
-    <input type="tel" name="tel" placeholder="*Teléfono" required value="{{ tel }}">
-    <label for="tel" class = "error"></label>
+    <input type="tel" name="telefono" placeholder="*Teléfono" required value="{{ turno.telefono }}">
+    <label for="telefono" class = "error"></label>
 
     <input type="number" name="edad" id="edad" placeholder="Edad" min="1" max="130" value = "{{ edad }}">
     <label for="edad" class = "error"></label>
@@ -40,10 +40,10 @@
    
    
     <label for="Fecha_de_nacimiento">Fecha de nacimiento</label>
-    <input type="date" id="nacimiento" name="nacimiento" required value="{{ nacimiento }}">
-    <label for="nacimiento" class = "error"></label>
+    <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required value="{{ nacimiento }}">
+    <label for="fecha_nacimiento" class = "error"></label>
     
-    <select name="pelo" id="pelo">
+    <select name="color_pelo" id="color_pelo">
         <option value="rubio">Rubio</option>
         <option value="morocho">Morocho</option>
         <option value="castaño">Castaño</option>
@@ -51,11 +51,11 @@
     </select>
     
     <label for="date" class = "separate">Fecha y hora de turno:</label>
-    <input type="date" id="fturno" name="fturno" value="{{ fturno }}">
-    <label for="fturno" class = "error"></label>
+    <input type="date" id="fecha_turno" name="fecha_turno" value="{{ fturno }}">
+    <label for="fecha_turno" class = "error"></label>
 
-    <input type="time" id="tturno" name="tturno" min="08:00:00" max="17:00:00" step="900" value="{{ tturno }}">
-    <label for="tturno" class = "error"></label>
+    <input type="time" id="hora_turno" name="hora_turno" min="08:00:00" max="17:00:00" step="900" value="{{ tturno }}">
+    <label for="hora_turno" class = "error"></label>
 
     <label for="diagnostico" class = "separate" >Diagnóstico</label>
     <input type="file" id="diagnostico" name ="diagnostico" accept="image/png, .jpg" value ="{{ diagnostico }}"> 

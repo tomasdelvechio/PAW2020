@@ -13,8 +13,8 @@ class TurnoController extends Controller
     }
 
     public function inicio(){
-        $data = $this->model->getAllData();
-       return view('index',$data);
+        $turnos = $this->model->getAllData();
+        return view('inicio',compact('turnos'));
   }
 
     public function nuevo(){
@@ -24,16 +24,16 @@ class TurnoController extends Controller
    
     public function ver(){
         $id = $_GET['id'];
-        $data = $this->model->getTurno($id);
-        return view('linkTurno', $data);
+        $turno=$this->model->getTurno($id);
+        return view('linkTurno', compact('turno'));
     }
 
     public function editar(){
         $id = $_GET['id'];
-        $data = $this->model->getTurno($id);
+        $turno = $this->model->getTurno($id);
         $cabezera = "Modificar turno";
         $boton = "Modificar";
-        return view('form', $data);
+        return view('form', compact('turno'));
     }
 
     public function guardar(){
