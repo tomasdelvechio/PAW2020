@@ -1,5 +1,0 @@
-USE mytodo;
-
-CREATE TABLE users (
-    id INTEGER PRIMARY KEY AUTO_INCREMENT,
-    name TEXT NOT NULL);
